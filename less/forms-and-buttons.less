@@ -29,3 +29,162 @@ button,
         }
     }
 }
+
+// ----------------------------
+// FORMS
+// ----------------------------
+
+
+input[type="search"],
+input[type="email"],
+input[type="password"],
+textarea,
+.input--single-line {
+    min-height: 44px;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+}
+
+
+// Signup
+// Blog
+// Ecom Form
+// Ecom Filters
+// Ecom Search
+// -----------------------------
+
+.signupform .form-body,// Signup
+.blogsearch .form-body,// Blog
+.ecomproductslist .form,// Ecom Form
+.ecomproductslist .fieldset--filters .form-body,// Ecom Filters
+.ecomproductslist .fieldset--search .form-body, // Ecom Search
+.flex-product-search .form-body { // Ecom Search in Header
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.form-group {
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    .input,
+    .select {
+        width: 100%;
+        min-height: 44px;
+    }
+    .select {
+        height: 44px;
+    }
+}
+
+.form-group:first-child {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.form-group:last-child .button {
+    white-space: nowrap;
+    @media @mobile {
+        white-space: normal;
+    }
+}
+
+
+
+
+// -------------------------------------
+// Ecom Search in Header
+// -------------------------------------
+
+.flex-product-search {
+    .form-group {
+        height: 44px;
+        margin-bottom: 0;
+    }
+    .input {
+        height: 44px;
+        text-align: right;
+        border: none;
+        background-color: transparent;
+        &:focus {
+            border: none;
+            box-shadow: none;
+            opacity: 0.6;
+        }
+        @media @mobile {
+            text-align: left;
+        }
+    }
+    .button--submit {
+        position: relative;
+        height: auto;
+        padding: 5px 12px;
+        font-size: 0;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        &:before {
+            position: absolute;
+            top: -2px;
+            right: 0;
+            content: "\F002";
+            font-family: 'FontAwesome', sans-serif;
+            font-size: 18px;
+            color: @font-swatch7-color;
+            .transition( all, 0.5s, ease );
+            @media @mobile {
+                top: 0;
+            }
+        }
+        &:hover {
+            border: none;
+            &:before {
+                color: @color-swatch2;
+                .transition( all, 0.5s, ease );
+            }
+        }
+    }
+    @media @mobile {
+        border: 2px solid darken(@color-swatch1, 10%);
+        padding: 0 10px;
+    }
+}

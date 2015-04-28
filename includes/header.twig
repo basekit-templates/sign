@@ -33,9 +33,13 @@
 
         {% if plugins.ecommerce.store.live %}
             <div class="flex-item flex-product-search">
-                <form class="form  ecomproductslist__form js-productlist-display-form" method="GET" action="/store">
-                    <input class="input  input--search  ecomproductslist__input  js-display-control" id="page-zones__main-widgets__productslist__ecomproductslist__search" name="productlist-search" placeholder="Search Term..." type="search" value="">
-                    <button class="button  button--submit  ecomproductslist__button" type="submit">Search Products...</button>
+                <form class="form-body">
+                    <div class="form-group">
+                        <input class="input js-display-control" id="page-zones__main-widgets__ecomproductslistWidget__ecomproductslist__search" name="productlist-search" placeholder="Search Products..." type="search" value="">
+                    </div>
+                    <div class="form-group">
+                        <button class="button  button--submit  ecomproductslist__button" type="submit">Search</button>
+                    </div>
                 </form>
             </div>
         {% endif %}
@@ -43,3 +47,6 @@
     </div>
 
 </header>
+
+
+
