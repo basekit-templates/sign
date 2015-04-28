@@ -1,0 +1,45 @@
+<!-- Template Widgets -->
+
+<header>
+
+    <div class="header__first-row flex-container">
+
+        <div class="tablet-top-bar"></div>
+        <div class="flex-item flex-shopbasket">
+            {{widget('ecombasket', 'shopbasket', {})|raw}}
+        </div>
+        <div class="flex-item flex-nav">
+            {{widget('extendednavigation', 'navigation', {"align":"right"})|raw}}
+        </div>
+        <div class="flex-item flex-logo">
+            {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+        </div>
+        <div class="flex-item flex-companyname">
+            {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+        </div>
+
+    </div>
+    <div class="default-header-bottom-line"></div>
+
+    <!-- End Template Widgets -->
+
+    <div class="header__second-row flex-container">
+
+        <div class="flex-item flex-page-title">
+            <h2>
+                <span>Page Title</span>
+            </h2>
+        </div>
+
+        {% if plugins.ecommerce.store.live or app.mode != 'published' %}
+            <div class="flex-item flex-product-search">
+                <form class="form  ecomproductslist__form js-productlist-display-form" method="GET" action="/store">
+                    <input class="input  input--search  ecomproductslist__input  js-display-control" id="page-zones__main-widgets__productslist__ecomproductslist__search" name="productlist-search" placeholder="Search Term..." type="search" value="">
+                    <button class="button  button--submit  ecomproductslist__button" type="submit">Search Products...</button>
+                </form>
+            </div>
+        {% endif %}
+
+    </div>
+
+</header>

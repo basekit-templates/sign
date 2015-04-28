@@ -1,0 +1,31 @@
+//
+// Copyright 2014 BaseKit Platform Ltd
+//
+// ---------
+// variables
+// ---------
+
+// Colour swatches
+// -------------------
+@bg-color:        @color-swatch1; // Background
+@contrast-color:  @color-swatch2; // Contrast Color
+@button-color:    @color-swatch3; // Button BG Color
+@heading-color:   @color-swatch4; // Heading Text Color (H1 - H4)
+@paragraph-color: @color-swatch5; // Paragraph Text Color
+@nav-color:       @color-swatch6; // Nav Link Color
+@spare-color:     @color-swatch7; // Spare Color
+
+
+
+
+// -----------------------------
+// 3. #Mixins
+// -----------------------------
+
+.transition (@prop: all, @time: 0.5s, @ease: ease) {
+    -webkit-transition: @prop @time @ease;
+    -moz-transition:    @prop @time @ease;
+    -ms-transition:     @prop @time @ease;
+    -o-transition:      @prop @time @ease;
+    transition:         @prop @time @ease;
+}

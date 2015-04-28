@@ -1,0 +1,680 @@
+
+header {
+    clear: both;
+}
+
+
+// ---------------
+// Flexbox
+// ---------------
+
+.flex-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: space-between;
+    -ms-flex-line-pack: justify;
+    align-content: space-between;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+// Global style for flex items
+.flex-item {
+    @media only screen and (min-width : 770px) {
+        margin: 10px 0;
+    }
+    @media @tablet {
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        margin-bottom: 0;
+    }
+}
+
+
+
+
+// -------------------------------------------------------
+// Header First Row: Logo, Company Name, Nav & Shop Basket
+// -------------------------------------------------------
+
+.header__first-row.flex-container {
+    @media only screen and (min-width : 770px) {
+        margin: 30px 0 20px;
+    }
+    @media @tablet {
+        padding: 0;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+.header__first-row .flex-item {
+    // Reorder items for desktop
+    @media only screen and (min-width : 770px) {
+        margin: 10px 0;
+        &.flex-shopbasket {
+            -webkit-box-ordinal-group: 5;
+            -moz-box-ordinal-group: 5;
+            -webkit-order: 4;
+            -ms-flex-order: 4;
+            order: 4;
+        }
+        &.flex-nav {
+            -webkit-box-ordinal-group: 4;
+            -moz-box-ordinal-group: 4;
+            -webkit-order: 3;
+            -ms-flex-order: 3;
+            order: 3;
+        }
+        &.flex-logo {
+            -webkit-box-ordinal-group: 2;
+            -moz-box-ordinal-group: 2;
+            -webkit-order: 1;
+            -ms-flex-order: 1;
+            order: 1;
+        }
+        &.flex-companyname {
+            -webkit-box-ordinal-group: 3;
+            -moz-box-ordinal-group: 3;
+            -webkit-order: 2;
+            -ms-flex-order: 2;
+            order: 2;
+        }
+    }
+}
+// Social icons, logo and companyname
+.flex-shopbasket,
+.flex-logo,
+.flex-companyname {
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+}
+
+// Navigation widget
+.flex-nav {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    @media @tablet {
+        width: 100%;
+        .navigation-toggle {
+            height: 44px;
+        }
+    }
+}
+
+// Spacing for logo and company name on tablet and mobile
+
+@media @tablet {
+    .flex-logo {
+        margin-top: 30px;
+        width: 100%;
+        text-align: center;
+        .logo-image {
+            padding: 0 5%;
+            margin: 0 auto;
+        }
+    }
+    .flex-companyname {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+
+
+
+
+// -------------------
+// Tablet top Bar
+// -------------------
+
+.tablet-top-bar {
+    @media @tablet {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 44px;
+        background-color: @color-swatch4;
+    }
+}
+
+
+
+
+// ----------
+// Navigation
+// ----------
+
+// Parent nav items, adds arrow icon
+.item-name--parent:after {
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    margin-left: 4px;
+    border: 5px solid transparent;
+    border-top-color: @font-swatch6-color;
+    @media @tablet {
+        border-top-color: @color-swatch7;
+    }
+}
+.item-name--parent:hover:after {
+    border-top-color: @font-swatch6-color-hover;
+    @media @tablet {
+        border-top-color: lighten(@color-swatch4, 40%);
+    }
+}
+
+// Selected nav item
+
+.navigation-item.selected > .item-name {
+    color: @font-swatch6-color-hover;
+}
+
+
+// Hide toggle on desktop
+.navigation-toggle {
+    display: none;
+    @media @tablet {
+        display: inline-block;
+        position: absolute;
+        height: 44px;
+        width: 40px;
+        right: 0;
+        top: -44px;
+        text-indent: 1000px;
+        overflow: hidden;
+        line-height: 0;
+        background-color: @color-swatch4;
+        border: none;
+        &:before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            top: 0;
+            left: 50%;
+            right: 0;
+            margin-top: 15px;
+            margin-left: -13px;
+            background: @color-swatch1;
+            box-shadow: 0 7px 0 @color-swatch1;
+            .transition( all, 0.5s, ease );
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            top: 14px;
+            left: 50%;
+            right: 0;
+            margin-top: 15px;
+            margin-left: -13px;
+            background: @color-swatch1;
+            .transition( all, 0.5s, ease );
+        }
+    }
+    &:hover {
+        background-color: @color-swatch4;
+        border: none;
+        &:before {
+            background: lighten(@color-swatch4, 60%);
+            box-shadow: 0 7px 0 lighten(@color-swatch4, 60%);
+        }
+        &:after {
+            background: lighten(@color-swatch4, 60%);
+        }
+    }
+}
+
+
+// Toggle Button Open State
+.open & {
+    &.navigation-toggle {
+        background-color: @color-swatch4;
+        &:before {
+            width: 26px;
+            margin-top: 21px;
+            margin-left: -4px;
+            background: @color-swatch1;
+            box-shadow: none;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            .transition( all, 0.5s, ease );
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            width: 26px;
+            height: 3px;
+            top: 0;
+            left: 50%;
+            right: 0;
+            margin-top: 21px;
+            margin-left: -4px;
+            background: @color-swatch1;
+            box-shadow: none;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            .transition( all, 0.5s, ease );
+        }
+        &:hover {
+            &:after,
+            &:before {
+                background: lighten(@color-swatch4, 60%);
+            }
+        }
+    }
+}
+
+// Clears margin on ul, hides navigatio on mobile (made visible in conjunction with navigation-toggle)
+.navigation-list {
+    margin: 0;
+    width: auto;
+    @media @tablet {
+        display: none;
+        width: 100%;
+        &.open {
+            display: block;
+            border-bottom: 1px solid darken(@color-swatch1, 10%);
+        }
+    }
+}
+
+// Sets background colour to navigation and dropdowns
+.extendednavigation,
+.navigation-list--children {
+    @media @tablet {
+        background-color: @color-swatch1;
+    }
+}
+.navigation-list--children {
+    left: inherit;
+    right: 0;
+    white-space: normal;
+    border: 1px solid darken(@color-swatch1, 10%);
+    @media @tablet {
+        border-right: none;
+        border-left: none;
+    }
+    .navigation-item--child {
+        @media only screen and (min-width:770px) {
+            border-bottom: 1px solid darken(@color-swatch1, 5%);
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+// Sets nav items to full width on mobile and tablet
+.navigation-item {
+    @media @tablet {
+        display: block;
+    }
+}
+
+.navigation-item .item-name {
+    padding: 4px 12px;
+    @media @tablet {
+        padding: 8px 0;
+        color: @color-swatch7;
+        &:hover {
+            color: lighten(@color-swatch4, 40%);
+        }
+    }
+}
+
+// Fix overlay in editor on tablet and mobile
+
+div#page-zones__template-widgets__extendednavigation-navigation-bk-overlay {
+    @media @tablet {
+        width: 30%;
+        height: 44px;
+        top: -44px !important;
+        left: inherit !important;
+    }
+}
+
+
+
+
+// -------------------
+// Shop Basket
+// -------------------
+
+.flex-shopbasket {
+    @media @tablet {
+        width: 100%;
+    }
+    .basket-toggle {
+      margin-bottom: 0;
+    }
+    .basket-toggle.button {
+        min-height: inherit;
+        padding: 5px 17px 5px 15px;
+        font-family: @font-swatch6-font-family;
+        font-size: @font-swatch6-font-size;
+        line-height: @font-swatch6-line-height;
+        white-space: nowrap;
+        text-align: left;
+        @media @tablet {
+            min-height: 44px;
+            padding: 0;
+            color: @color-swatch1;
+            background-color: transparent;
+            border: none;
+        }
+        &:hover {
+            @media @tablet {
+                color: lighten(@color-swatch4, 60%);
+            }
+        }
+    }
+    .show-content .basket-body {
+        display: block;
+    }
+    .basket-body {
+        display: none;
+        position: absolute;
+        top: 50px;
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        z-index: 9;
+        background-color: @color-swatch1;
+        border: 2px solid darken(@color-swatch1, 10%);
+        @media only screen and (min-width:770px) {
+            left: -36px;
+            width: 160%;
+            max-width: 160%;
+        }
+    }
+    .basket-item {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid darken(@color-swatch1, 10%);
+    }
+    .basket-item-image {
+        width: 60px;
+        margin-right: 20px;
+        margin-bottom: 5px;
+        .image-link {
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+        }
+    }
+    .button.item-remove {
+        width: 20px;
+        height: 20px;
+        min-height: 20px;
+        line-height: 20px;
+        padding: 0;
+        text-align: center;
+        color: @color-swatch1;
+        background-color: @font-swatch6-color;
+        border: none;
+        @media @tablet {
+            width: 40px;
+            height: 40px;
+            min-height: 40px;
+            line-height: 40px;
+        }
+        &:hover {
+            background-color: transparent;
+            color: @color-swatch2;
+        }
+    }
+    .basket-item-details {
+        @media only screen and (min-width:770px) {
+            width: 100%;
+        }
+    }
+    .basket-item-name {
+        @media only screen and (min-width:770px) {
+            max-width: 100%;
+        }
+    }
+    .view-basket {
+        padding: 8px 20px;
+        color: @color-swatch1;
+        background-color: @font-swatch6-color;
+        border: none;
+        &:hover {
+            background-color: @color-swatch2;
+            border: none;
+        }
+        @media only screen and (min-width:770px) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+
+
+
+// --------------
+// Brand
+// --------------
+
+.logo {
+  margin-right: 10px;
+  @media @tablet {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+}
+
+.company-link:hover {
+    color: @font-swatch6-color;
+    text-decoration: none;
+    .transition( all, 0.5s, ease );
+}
+
+
+
+
+// ------------------
+// Header Second Row
+// ------------------
+
+
+.header__second-row.flex-container {
+    @media only screen and (min-width : 770px) {
+        margin-top: 10px;
+    }
+    @media @tablet {
+        border-top: 1px solid darken(@color-swatch1, 10%);
+        padding: 10px 0;
+    }
+    @media @mobile {
+        border-top: 0;
+        padding: 0;
+    }
+}
+
+.flex-page-title,
+.flex-product-search {
+    -webkit-flex: 1 1 50%;
+    -ms-flex: 1 1 50%;
+    flex: 1 1 50%;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+    margin-bottom: 0;
+    min-height: 44px;
+    line-height: 44px;
+}
+
+
+
+
+// ------------------
+// Page Title
+// ------------------
+
+.flex-page-title {
+    @media @mobile {
+        display: none;
+    }
+}
+
+.flex-page-title h2 {
+    padding: 0;
+    color: @font-swatch6-color;
+}
+
+.flex-product-search {
+    @media @tablet {
+        -webkit-flex: 1 0 50%;
+        -ms-flex: 1 0 50%;
+        flex: 1 0 50%;
+    }
+    @media @mobile {
+        border: 2px solid darken(@color-swatch1, 10%);
+        padding: 0 10px;
+    }
+    .form {
+        position: relative;
+        border: none;
+        min-height: 44px;
+    }
+
+    .input--search {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 3;
+        display: inline-block;
+        height: 44px;
+        width: 0;
+        padding-right: 178px;
+        font-family: @font-swatch6-font-family;
+        font-size: @font-swatch6-font-size;
+        line-height: @font-swatch6-line-height;
+        color: @font-swatch6-color;
+        text-align: right;
+        border: none;
+        outline: none;
+        background: none;
+        cursor: pointer;
+        transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+        opacity: 0;
+        @media @mobile {
+            width: 98%;
+            text-align: left;
+        }
+    }
+
+    .input--search:focus {
+        width: 90%;
+        right: 30px;
+        padding-right: 0;
+        z-index: 1;
+        cursor: text;
+        box-shadow: none;
+        opacity: 1;
+        @media @mobile {
+            width: 93%;
+            text-align: left;
+        }
+    }
+
+    .button--submit {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        float: right;
+        display: inline-block;
+        width: 178px;
+        height: 44px;
+        min-height: inherit;
+        padding: 0;
+        font-family: @font-swatch6-font-family;
+        font-size: @font-swatch6-font-size;
+        line-height: @font-swatch6-line-height;
+        color: @font-swatch6-color;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        opacity: 1;
+        transition: opacity .4s ease;
+        &:after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            text-align: right;
+            content: "\F002";
+            font-family: 'FontAwesome', sans-serif;
+            font-size: 18px;
+            color: @font-swatch7-color;
+        }
+        @media @mobile {
+            width: 100%;
+            text-align: left;
+        }
+    }
+
+    .button--submit:hover {
+        opacity: 0.4;
+        border: none;
+    }
+
+    .input--search:hover + .button--submit {
+        opacity: 0.4;
+    }
+
+    .input--search:focus + .button--submit {
+        z-index: 999999;
+        width: 34px;
+        text-indent: -2000px;
+        border: none;
+    }
+}
+
