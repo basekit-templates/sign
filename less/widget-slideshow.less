@@ -10,7 +10,192 @@
 
 // Slideshow set minimum height
 .responsiveslideshow .slides-list,
-.responsiveslideshow .figure {
+.responsiveslideshow .figure,
+.slide-navigation {
     position: relative;
-    min-height: 400px;
+    min-height: 640px;
+    @media only screen and (max-width:1224px) {
+        min-height: 587px;
+    }
+    @media only screen and (max-width:1024px) {
+        min-height: 491px;
+    }
+    @media only screen and (max-width:900px) {
+        min-height: 432px;
+    }
+    @media @tablet {
+        min-height: 369px;
+    }
+    @media only screen and (max-width:624px) {
+        min-height: 333px;
+    }
+    @media @mobile {
+        min-height: 230px;
+    }
+    @media only screen and (max-width:414px) {
+        min-height: 221px;
+    }
+    @media only screen and (max-width:375px) {
+        min-height: 200px;
+    }
+    @media only screen and (max-width:360px) {
+        min-height: 192px;
+    }
+    @media only screen and (max-width:320px) {
+        min-height: 171px;
+    }
+}
+
+
+// Homepage slideshow
+// --------------------
+
+.homepage__slideshow {
+    @media @mobile {
+        margin: 20px 0;
+    }
+}
+
+
+// Slideshow Navigation
+// --------------------
+
+.slide-navigation {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: flex-end;
+    -ms-flex-line-pack: end;
+    align-content: flex-end;
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    .button.icon:before,
+    .button.icon:after {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+.slide-navigation {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    .button {
+        color: @color-swatch1;
+        padding: 0;
+        outline: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        border: none;
+    }
+    .button:hover {
+        color: @font-swatch6-color-hover;
+        background-color: transparent;
+        border: none;
+    }
+    .previous-button,
+    .next-button,
+    .pause-toggle {
+        position: absolute;
+        top: 0;
+        width: 50px;
+        height: 100%;
+        background-color: transparent;
+        &:hover:before,
+        &:hover:after {
+            background-color: fade(@color-swatch1, 50%);
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            border-radius: 50px;
+        }
+    }
+    .previous-button:hover:before {
+        padding: 8px 12px 7px 10px;
+    }
+    .next-button:hover:after {
+        padding: 8px 10px 7px 12px;
+    }
+    .pause-toggle:hover:before {
+        padding: 8px 10px;
+    }
+    .control-text {
+        font-size: 0;
+        width: 30px;
+        height: 30px;
+        &:hover {
+            display: block;
+        }
+    }
+    .previous-button {
+        left: 0;
+    }
+    .next-button {
+        right: 0;
+    }
+    .pause-toggle {
+        right: 48%;
+    }
+}
+
+
+// Centre pause button
+.slide-navigation .pause-toggle {
+    margin: 0 auto;
+}
+
+// Slideshow Pagination
+// --------------------
+
+.slide-pagination {
+    position: relative;
+}
+
+.slide-pagination .pagination-list {
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    .pagination-item {
+        margin: 0 2px;
+        display: inline-block;
+    }
+    .button {
+        width: 8px;
+        height: 8px;
+        min-height: 8px;
+        padding: 0;
+        text-indent: -9999px;
+        overflow: hidden;
+        box-shadow: none;
+        -webkit-border-radius: 50px;
+           -moz-border-radius: 50px;
+                border-radius: 50px;
+        background-color: darken(@color-swatch1, 20%);
+        border: none;
+    }
+    .pagination-item.selected .button {
+        background-color: @color-swatch4;
+    }
 }
