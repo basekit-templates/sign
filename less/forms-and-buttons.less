@@ -257,7 +257,11 @@ textarea,
 
 // Two Columns
 .columns-two-left,
-.columns-two-right {
+.columns-two-right,
+// Three Columns
+.columns-three-left,
+.columns-three-middle,
+.columns-three-right {
     .signupform .form-body, // Signup
     .blogsearch .form-body {// Blog
         width: 100%;
@@ -270,11 +274,40 @@ textarea,
     }
 }
 
-
 // Three Columns
 .columns-three-left,
 .columns-three-middle,
-.columns-three-right,
+.columns-three-right {
+    .signupform .form-body, // Signup
+    .blogsearch .form-body,
+    .contactform { // Blog
+        @media @tablet {
+            display: block;
+            width: 100%;
+            .input {
+                border-right: 2px solid @color-swatch7;
+            }
+            .button {
+                display: block;
+                width: 100%;
+                margin-left: 0;
+                font-size: @font-swatch7-font-size;
+                background-color: @color-swatch4;
+                color: @color-swatch1;
+                border: none;
+                white-space: normal;
+                &:hover {
+                    border: none;
+                    background-color: @color-swatch3;
+                }
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
 // Four Columns
 .columns-four-first,
 .columns-four-second,
@@ -283,22 +316,20 @@ textarea,
     .signupform .form-body, // Signup
     .blogsearch .form-body,
     .contactform { // Blog
+        display: block;
         width: 100%;
-        @media only screen and (max-width:1024px) {
-            width: 100%;
-        }
-        @media @tablet {
-            width: 100%;
-        }
         .button {
-            width: 100%;
             margin-left: 0;
+            font-size: @font-swatch7-font-size;
             background-color: @color-swatch4;
             color: @color-swatch1;
             border: none;
             &:hover {
                 border: none;
                 background-color: @color-swatch3;
+            }
+            &:before {
+                display: none;
             }
         }
     }
