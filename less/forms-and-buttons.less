@@ -289,17 +289,11 @@ textarea,
             }
             .button {
                 display: block;
-                width: 100%;
+                width: auto;
                 margin-left: 0;
                 font-size: @font-swatch7-font-size;
-                background-color: @color-swatch4;
-                color: @color-swatch1;
-                border: none;
                 white-space: normal;
-                &:hover {
-                    border: none;
-                    background-color: @color-swatch3;
-                }
+                border-left: 2px solid @color-swatch7;
                 &:before {
                     display: none;
                 }
@@ -323,11 +317,10 @@ textarea,
                 border-right: 2px solid @color-swatch7;
             }
             .button {
-                margin-left: 0;
-                font-size: @font-swatch7-font-size;
-                background-color: @color-swatch4;
-                color: @color-swatch1;
-                border: none;
+                    width: auto;
+                    margin-left: 0;
+                    font-size: @font-swatch7-font-size;
+                    border-left: 2px solid @color-swatch7;
                 &:hover {
                     border: none;
                     background-color: @color-swatch3;
