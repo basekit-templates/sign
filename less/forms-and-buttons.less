@@ -6,10 +6,10 @@
 .button {
     min-height: 44px;
     padding: 8px 25px;
-    border: 2px solid darken(@color-swatch1, 10%);
+    border: 2px solid @color-swatch7;
     .transition( all, 0.5s, ease );
     &:hover {
-        border: 2px solid darken(@color-swatch2, 10%);
+        border: 2px solid @color-swatch3;
     }
     @media @mobile {
         width: 100%;
@@ -45,21 +45,48 @@ textarea,
     -webkit-border-radius: 0;
        -moz-border-radius: 0;
             border-radius: 0;
+    &:focus {
+        border-color: fade(@color-swatch3, 30%);
+        outline: 0;
+    }
+}
+
+
+// Legends and labels
+// ----------------------------
+
+.legend {
+    font-family: @font-swatch4-font-family;
+    font-size: @font-swatch4-font-size;
+    line-height: @font-swatch4-line-height;
+    color: @font-swatch4-color;
+    margin-bottom: 10px;
+}
+
+.label,
+.input {
+    font-family: @font-swatch5-font-family;
+    font-size: bkscale(@font-swatch5-font-size,0.8);
+    line-height: bkscale(@font-swatch5-line-height,0.9);
+    color: @font-swatch5-color;
+}
+
+// Signup
+.signupform,
+.blogsearch {
+    .label {
+        display: none;
+    }
 }
 
 
 // Signup
-// Blog
-// Ecom Form
-// Ecom Filters
-// Ecom Search
+// Blog Search
+// Ecom Search in Header
 // -----------------------------
 
 .signupform .form-body,// Signup
-.blogsearch .form-body,// Blog
-.ecomproductslist .form,// Ecom Form
-.ecomproductslist .fieldset--filters .form-body,// Ecom Filters
-.ecomproductslist .fieldset--search .form-body, // Ecom Search
+.blogsearch .form-body,// Blog Search
 .flex-product-search .form-body { // Ecom Search in Header
     display: -webkit-box;
     display: -moz-box;
@@ -113,6 +140,10 @@ textarea,
     .select {
         height: 44px;
     }
+    .input,
+    .textarea {
+        border: 2px solid @color-swatch7;
+    }
 }
 
 .form-group:first-child {
@@ -129,6 +160,149 @@ textarea,
 }
 
 
+// Buttons in forms
+// ------------------------------------------------
+
+.signupform, // Signup
+.blogsearch, // Blog Search
+.contactform  { // Contact Form
+    .button {
+        margin-left: -2px;
+        @media @mobile {
+            margin-left: 0;
+            background-color: @color-swatch4;
+            color: @color-swatch1;
+            border: none;
+            &:hover {
+                border: none;
+                background-color: @color-swatch3;
+            }
+        }
+    }
+}
+
+// Blog Search Button on Tablet and Desktop
+
+.blogsearch {
+    @media only screen and (min-width:480px) {
+        .input  {
+            border-right: 0;
+        }
+        .button--submit {
+            position: relative;
+            width: 50px;
+            height: auto;
+            padding: 5px 12px;
+            font-size: 0;
+            cursor: pointer;
+            background-color: transparent;
+            border: 2px solid @color-swatch7;
+            border-left: 0;
+            &:before {
+                position: absolute;
+                right: 15px;
+                content: "\F002";
+                font-family: 'FontAwesome', sans-serif;
+                font-size: 18px;
+                color: @font-swatch7-color;
+                .transition( all, 0.5s, ease );
+                @media @mobile {
+                    top: 0;
+                }
+            }
+            &:hover:before {
+                color: @color-swatch3;
+                .transition( all, 0.5s, ease );
+            }
+        }
+    }
+}
+
+
+
+
+
+// Signup Form and Blog Search on Desktop & Tablet
+// ------------------------------------------------
+.signupform .form-body,// Signup
+.blogsearch .form-body {// Blog
+    width: 40%;
+    @media only screen and (max-width:1024px) {
+        width: 50%;
+    }
+    @media @tablet {
+        width: 60%;
+    }
+    @media only screen and (max-width:600px) {
+        width: 100%;
+    }
+    @media @mobile {
+        display: block;
+    }
+    @media only screen and (min-width:480px) {
+        input[type="search"],
+        input[type="email"],
+        .input--single-line {
+            &:focus {
+                border-color: fade(@color-swatch3, 30%);
+                box-shadow: inset -2px 0 0 0 fade(@color-swatch3, 30%), inset 0 1px 3px @color-swatch7;
+                outline: 0;
+            }
+        }
+    }
+}
+
+// Forms in Responsive Columns
+// ----------------------------
+
+// Two Columns
+.columns-two-left,
+.columns-two-right {
+    .signupform .form-body, // Signup
+    .blogsearch .form-body {// Blog
+        width: 100%;
+        @media only screen and (max-width:1024px) {
+            width: 100%;
+        }
+        @media @tablet {
+            width: 100%;
+        }
+    }
+}
+
+
+// Three Columns
+.columns-three-left,
+.columns-three-middle,
+.columns-three-right,
+// Four Columns
+.columns-four-first,
+.columns-four-second,
+.columns-four-third,
+.columns-four-fourth {
+    .signupform .form-body, // Signup
+    .blogsearch .form-body,
+    .contactform { // Blog
+        width: 100%;
+        @media only screen and (max-width:1024px) {
+            width: 100%;
+        }
+        @media @tablet {
+            width: 100%;
+        }
+        .button {
+            width: 100%;
+            margin-left: 0;
+            background-color: @color-swatch4;
+            color: @color-swatch1;
+            border: none;
+            &:hover {
+                border: none;
+                background-color: @color-swatch3;
+            }
+        }
+    }
+}
 
 
 // -------------------------------------
@@ -164,7 +338,7 @@ textarea,
         background-color: transparent;
         &:before {
             position: absolute;
-            top: -2px;
+            top: 2px;
             right: 0;
             content: "\F002";
             font-family: 'FontAwesome', sans-serif;
@@ -172,19 +346,19 @@ textarea,
             color: @font-swatch7-color;
             .transition( all, 0.5s, ease );
             @media @mobile {
-                top: 0;
+                top: 3px;
             }
         }
         &:hover {
             border: none;
             &:before {
-                color: @color-swatch2;
+                color: @color-swatch3;
                 .transition( all, 0.5s, ease );
             }
         }
     }
     @media @mobile {
-        border: 2px solid darken(@color-swatch1, 10%);
-        padding: 0 10px;
+        border: 2px solid @color-swatch7;
+        padding: 0 10px 0 0;
     }
 }

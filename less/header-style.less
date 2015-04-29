@@ -211,15 +211,9 @@ header {
     margin-left: 4px;
     border: 5px solid transparent;
     border-top-color: @font-swatch6-color;
-    @media @tablet {
-        border-top-color: @color-swatch7;
-    }
 }
 .item-name--parent:hover:after {
     border-top-color: @font-swatch6-color-hover;
-    @media @tablet {
-        border-top-color: lighten(@color-swatch4, 40%);
-    }
 }
 
 // Selected nav item
@@ -380,10 +374,6 @@ header {
     padding: 4px 12px;
     @media @tablet {
         padding: 8px 0;
-        color: @color-swatch7;
-        &:hover {
-            color: lighten(@color-swatch4, 40%);
-        }
     }
 }
 
@@ -561,7 +551,7 @@ div#page-zones__template-widgets__extendednavigation-navigation-bk-overlay {
 }
 
 .flex-page-title h2 {
-    padding: 0;
+    padding: 5px 0 0;
     color: @font-swatch6-color;
 }
 

@@ -15,12 +15,12 @@
     {
         "Swatch 1": {
             "color1":"#ffffff",
-            "color2":"#d6d6d6",
+            "color2":"#44bfc9",
             "color3":"#44bfc9",
             "color4":"#505050",
             "color5":"#8a9191",
             "color6":"#afb6b6",
-            "color7":"#505050"
+            "color7":"#dddddd"
         }
     },
     "fontSwatch": {
@@ -71,7 +71,7 @@
             "font-weight": "400",
             "line-height": "26px",
             "color": "@color-swatch6",
-            "color-hover": "@color-swatch7",
+            "color-hover": "@color-swatch4",
             "letter-spacing": "inherit",
             "background-color": "@color-swatch1",
             "background-color-hover": "@color-swatch1"
@@ -97,7 +97,7 @@
         "font9": {
             "font-family": "\"PT Sans\", Tahoma, Geneva, sans-serif",
             "font-size": "18px",
-            "font-weight": "700",
+            "font-weight": "400",
             "line-height": "28px",
             "color": "@color-swatch1",
             "letter-spacing": "inherit"
