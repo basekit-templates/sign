@@ -11,7 +11,7 @@
     }
 }
 
-.bk-pt-store .listing-title {
+.listing-title {
     display: none;
 }
 
@@ -41,10 +41,10 @@
     width: 100%;
     @media only screen and (min-width: 770px) {
         margin-bottom: 20px;
-        box-shadow: inset 0px 0px 0px 1px @color-swatch7;
-        -webkit-box-shadow: inset 0px 0px 0px 1px @color-swatch7;
-        -moz-box-shadow: inset 0px 0px 0px 1px @color-swatch7;
-        -o-box-shadow: inset 0px 0px 0px 1px @color-swatch7;
+        box-shadow: inset 0px 0px 0px 2px @color-swatch7;
+        -webkit-box-shadow: inset 0px 0px 0px 2px @color-swatch7;
+        -moz-box-shadow: inset 0px 0px 0px 2px @color-swatch7;
+        -o-box-shadow: inset 0px 0px 0px 2px @color-swatch7;
     }
 }
 
@@ -221,7 +221,73 @@
     }
 }
 
+// Responsive Columns
+// ---------------------------------------
 
+// Two Columns
+.columns-two-left,
+.columns-two-right,
+// Three Columns
+.columns-three-left,
+.columns-three-middle,
+.columns-three-right {
+    .listing-header,
+    .listing-body,
+    .fieldset--filters {
+        width: 100%;
+    }
+    .ecomproductslist .form,// Ecom Form
+    .ecomproductslist .fieldset--filters .form-body,// Ecom Filters
+    .ecomproductslist .fieldset--search .form-body { // Ecom Search
+        .flex;
+        width: 100%;
+        @media @tablet {
+            display: block;
+        }
+    }
+    .legend {
+        display: none;
+    }
+    .product-item-image,
+    .product-item-image .image-link {
+        height: 200px;
+        line-height: 200px;
+    }
+    .ecomproductslist .listing-order {
+        text-align: center;
+    }
+}
+
+// Four Columns
+.columns-four-first,
+.columns-four-second,
+.columns-four-third,
+.columns-four-fourth {
+    .listing-header,
+    .listing-body,
+    .fieldset--filters {
+        width: 100%;
+    }
+    .ecomproductslist .form,// Ecom Form
+    .ecomproductslist .fieldset--filters .form-body,// Ecom Filters
+    .ecomproductslist .fieldset--search .form-body { // Ecom Search
+        width: 100%;
+        @media screen and (min-width:481px) and (max-width:770px) {
+            display: block;
+        }
+    }
+    .legend {
+        display: none;
+    }
+    .product-item-image,
+    .product-item-image .image-link {
+        height: 200px;
+        line-height: 200px;
+    }
+    .ecomproductslist .listing-order {
+        text-align: center;
+    }
+}
 
 // Basket widget
 // -------------
