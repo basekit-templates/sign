@@ -230,7 +230,12 @@
 // Three Columns
 .columns-three-left,
 .columns-three-middle,
-.columns-three-right {
+.columns-three-right,
+// Four Columns
+.columns-four-first,
+.columns-four-second,
+.columns-four-third,
+.columns-four-fourth {
     .listing-header,
     .listing-body,
     .fieldset--filters {
@@ -252,6 +257,12 @@
     .legend {
         display: none;
     }
+    .fieldset--filters .select {
+        border: 2px solid @color-swatch7;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+    }
     .product-item-image,
     .product-item-image .image-link {
         height: 200px;
@@ -262,37 +273,6 @@
     }
 }
 
-// Four Columns
-.columns-four-first,
-.columns-four-second,
-.columns-four-third,
-.columns-four-fourth {
-    .listing-header,
-    .listing-body,
-    .fieldset--filters {
-        width: 100%;
-    }
-    .ecomproductslist .form,// Ecom Form
-    .ecomproductslist .fieldset--filters .form-body,// Ecom Filters
-    .ecomproductslist .fieldset--search .form-body { // Ecom Search
-        width: 100%;
-        box-shadow: none;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        -o-box-shadow: none;
-        @media screen and (min-width:481px) and (max-width:770px) {
-            display: block;
-        }
-    }
-    .product-item-image,
-    .product-item-image .image-link {
-        height: 200px;
-        line-height: 200px;
-    }
-    .ecomproductslist .listing-order {
-        text-align: center;
-    }
-}
 
 // Basket widget
 // -------------
