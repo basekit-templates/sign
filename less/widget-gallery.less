@@ -1,77 +1,111 @@
 //
 // Copyright 2014 BaseKit Platform Ltd
 //
-// -------
-// gallery
-// -------
+// -----------------------------
+// Gallery Widget
+// -----------------------------
 
-// Gallery 3 column layout
-// -----------------------
 
-// Title and description colour
-.image-title,
-.image-description {
-    color: @color-swatch1;
-}
+// Gallery Layout
+// --------------
 
-// Gallery list container
-.gallery-list {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -moz-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
+.gallery {
+    // Gallery List
+    .gallery-list {
+        .clearfix;
+        margin: 0 auto;
+    }
+    // Gallery Item
+    .gallery-item {
+        display: inline-block;
+        float: left;
+        margin: 0 0 20px;
+        padding: 0 10px;
+        position: relative;
+        width: 33.3%;
+        vertical-align: top;
+        // Display at 100% at mobile
+        @media @mobile {
+            margin-right: 0!important;
+            width: 100%;
+        }
+        .image-link {
+            .transition(all 0.5s ease-in-out);
+        }
+        &:hover {
+            figcaption {
+                background-color: darken(@color-swatch1, 5%);
+                .transition(all 0.5s ease-in-out);
+            }
+        }
+    }
+    .figure {
+        border: 1px solid darken(@color-swatch1, 10%);
+        .box-shadow;
+        .transform(scale(1));
+        .transition(all 0.5s ease-in-out);
+        &:hover {
+            .transform(scale(1.05));
+        }
+    }
 
-// Gallery items
-.gallery .gallery-item {
-    position: relative;
-    width: 32%;
-    margin-bottom: 2%;
-    // Display 100% at mobile
-    @media @mobile {
-        width: 100%;
-        margin-bottom: 4%;
+    // Figcaption
+    figcaption {
+        display: block;
+        .image-title {
+            font-family: @font-swatch4-font-family;
+            color: @font-swatch4-color;
+            font-size: bkscale(@font-swatch4-font-size,0.9);
+            font-weight: @font-swatch4-font-weight;
+            line-height: bkscale(@font-swatch4-line-height,0.8);
+        }
+        .image-description {
+            font-family: @font-swatch5-font-family;
+            color: @font-swatch5-color;
+            font-size: bkscale(@font-swatch5-font-size,0.8);
+            font-weight: @font-swatch5-font-weight;
+            line-height: bkscale(@font-swatch5-line-height,0.8);
+        }
+    }
+
+    // Use Background Image
+    .image-link {
+        // images on tablet and desktop
+        display: block;
+        background-repeat: inherit;
+        background-position: inherit;
+        background-size: inherit;
+        background-image: none !important;
+        .image {
+            display: block;
+            width: 100%;
+        }
+        @media @mobile {
+            max-height: 200px;
+            overflow: hidden;
+        }
     }
 }
 
-// Gallery item links
-.gallery .image-link {
-    display: block;
-    height: 280px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    @media @tablet {
-        height: 210px;
-    }
-}
 
-// Gallery hide img element (uses background cover technique)
-.gallery .image {
-    display: none;
-}
 
-// Gallery caption
-.gallery .caption {
+// Gallery Image Captions
+// ----------------------
+
+// Hide Caption
+.gallery__caption {
     display: none;
     margin: 0;
     padding: 20px;
-    background-color: hsla(hue(@color-swatch7), saturation(@color-swatch7), lightness(@color-swatch7), 0.8);
+    background-color: darken(@color-swatch1, 3%);
 }
 
-// Gallery show caption on hover
-.gallery .figure:hover .caption {
+// Show Caption
+.image-link:hover .image-gallery__caption {
     position: absolute;
-    bottom: 0;
+    top: 0;
     display: block;
     width: 100%;
+    height: 100%;
 }
+

@@ -4,7 +4,7 @@
     "thumbnail": "thumbnail.png",
     "screenshot": "thumbnail.png",
     "templateType":"ecommerce",
-    "pageTypes": ["home"],
+    "pageTypes": ["home", "blog", "store"],
     "tags": {
     },
     "images": [

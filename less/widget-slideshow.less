@@ -62,9 +62,17 @@
 .responsiveslideshow .caption {
     width: auto;
     padding: 0;
-    .image-title,
+    bottom: 30px;
+    left: 30px;
+    @media @mobile {
+        bottom: 0;
+        left: 0;
+    }
+    .image-title {
+        padding: 10px 25px 5px;
+    }
     .image-description {
-        padding: 5px 0;
+        padding: 5px 25px 10px;
     }
     .image-title {
         font-family: @font-swatch8-font-family;
