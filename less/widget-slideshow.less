@@ -46,6 +46,15 @@
     }
 }
 
+.responsiveslideshow .figure {
+    background-color: darken(@color-swatch1, 5%);
+}
+
+.responsiveslideshow .caption {
+    @media @mobile {
+        background-color: darken(@color-swatch1, 5%);
+    }
+}
 
 // Homepage Slideshow
 // --------------------
@@ -84,6 +93,12 @@
         @media @tablet {
             font-size: bkscale(@font-swatch8-font-size,0.85);
             line-height: bkscale(@font-swatch8-line-height,0.85);
+        }
+        @media @mobile {
+            padding: 5px 10px;
+            color: @color-swatch4;
+            font-size: bkscale(@font-swatch8-font-size,0.6);
+            line-height: bkscale(@font-swatch8-line-height,0.6);
         }
     }
     .image-description {
@@ -195,13 +210,23 @@
         }
     }
     .previous-button {
-        left: 0;
+        left: 25px;
+        transform: translate(-50%);
+        -webkit-transform: translate(-50%);
+        -ms-transform: translate(-50%);
     }
     .next-button {
-        right: 0;
+        right: 25px;
+        transform: translate(50%);
+        -webkit-transform: translate(50%);
+        -ms-transform: translate(50%);
     }
     .pause-toggle {
-        right: 48%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
     }
 }
 
