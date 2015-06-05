@@ -197,10 +197,86 @@ input, textarea, button, .button {
 
 
 
+// -----------------------------
+// Twitter Widget
+// -----------------------------
+
+.twitter .tweet-item {
+    padding: 20px;
+    border: 1px solid darken(@color-swatch1, 10%);
+    .box-shadow;
+    p {
+        padding-bottom: 0;
+    }
+    .tweet-wrap {
+        max-width: 80%;
+    }
+    .avatar {
+        max-width: 16%;
+        margin-right: 15px;
+        @media @mobile {
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+    }
+    .avatar-image {
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        @media @tablet {
+            max-width: 48px;
+        }
+    }
+    .tweet-wrap {
+        max-width: 77%;
+        @media @mobile {
+            margin: 0 auto;
+        }
+    }
+    .avatar,
+    .tweet-wrap {
+        display: inline-block;
+        vertical-align: middle;
+        @media @tablet {
+            vertical-align: top;
+        }
+        @media @mobile {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+    .account-link {
+        font-family: @font-swatch3-font-family;
+        color: @color-swatch3;
+        font-size: @font-swatch5-font-size;
+        font-weight: @font-swatch5-font-weight;
+        line-height: @font-swatch5-line-height;
+    }
+    .tweet-metadata {
+        font-size: 90%;
+        .timestamp, .via {
+            color: lighten(@color-swatch5, 15%)
+        }
+    }
+    .timestamp {
+        margin-right: 5px;
+    }
+}
+
+
+
+
+
 
 // -----------------------------
 // Profile widgets in Footer
 // -----------------------------
+
+// Twitter
+
+.template-footer .twitter a {
+    color: @color-swatch3;
+}
 
 // Social Icons
 
@@ -258,10 +334,4 @@ input, textarea, button, .button {
     .signupform .form-body {
         width: auto;
     }
-}
-
-// Twitter
-
-.template-footer .twitter a {
-    color: @color-swatch3;
 }
