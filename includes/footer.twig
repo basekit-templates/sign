@@ -1,9 +1,11 @@
 <div class="template-footer">
 
-        <!-- Page Content -->
-        <section class="template-content">
-            {{widget('profile', 'copyright', { 'profileType':'form', 'form':'profile'})|raw}}
-        </section>
-        <!-- End Page Content -->
+    <div class="template-footer__column1 col1">
+        {{widget('profile', 'socialicons', {'profileType':'address', 'address':'profile'})|raw}}
+    </div>
+
+    <div class="template-footer__column2 col2">
+        {{widget('profile', 'email', {'profileType':'address', 'address':'profile'})|raw}}
+    </div>
 
 </div>

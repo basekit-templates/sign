@@ -48,6 +48,17 @@ input, textarea, button, .button {
 
 
 // --------------------
+// All Widgets
+// --------------------
+
+.widget {
+    clear: both;
+}
+
+
+
+
+// --------------------
 // Default Page
 // --------------------
 
@@ -63,3 +74,181 @@ input, textarea, button, .button {
         border-top: 0;
     }
 }
+
+
+
+
+
+// -----------------------------
+// Plugins with two columns
+// -----------------------------
+
+.ecomproductslist .listing-header, // Ecom Filters
+.bk-pt-blog__search, // Blog Search
+.bk-pt-menu__menusections { // Menu Sections
+    width: 20%;
+    float: left;
+}
+
+.ecomproductslist .listing-body, // List of Products
+.bk-pt-blog__postslist, // Blog List
+.bk-pt-menu__menu { // Menu
+    width: 75%;
+    float: right;
+}
+
+.ecomproductslist .listing-header, // Ecom Filters
+.bk-pt-blog__search, // Blog Search
+.bk-pt-menu__menusections, //Menu Sections
+.ecomproductslist .listing-body, // List of Products
+.bk-pt-blog__postslist, // Blog List
+.bk-pt-menu__menu  { // Menu
+    @media @tablet {
+        width: 100%;
+    }
+}
+
+
+
+
+
+// -----------------------------
+// Text Size for Mobile
+// -----------------------------
+
+@media @mobile {
+    h1, .company-link {
+        font-size: bkscale(@font-swatch1-font-size,0.8);
+        line-height: bkscale(@font-swatch1-line-height,0.8);
+    }
+    h2 {
+        font-size: bkscale(@font-swatch2-font-size,0.8);
+        line-height: bkscale(@font-swatch2-line-height,0.8);
+    }
+    h3 {
+        font-size: bkscale(@font-swatch3-font-size,0.9);
+        line-height: bkscale(@font-swatch3-line-height,0.9);
+    }
+    h4, .account-link, .legend, .responsiveslideshow .caption .image-title,
+    .listing-title {
+        font-size: bkscale(@font-swatch4-font-size,0.9);
+        line-height: bkscale(@font-swatch4-line-height,0.9);
+    }
+    p, li, ol, blockquote, code, pre, time, td, th, .via, .profile a, .content a,
+    .responsiveslideshow .caption .image-description,
+    .category-link, .tag-link, .quantity-field,
+    .menusections-item a, .bk-pt-menu .menusections-item a,
+    .product-body {
+        font-size: bkscale(@font-swatch5-font-size,0.8);
+        line-height: bkscale(@font-swatch5-line-height,0.8);
+    }
+}
+
+
+
+
+// -----------------------------
+// Footer
+// -----------------------------
+
+
+.template-footer {
+    display: inline-block;
+    width: 100%;
+    padding: 30px 0;
+    a {
+        color: @font-swatch6-color;
+        &:hover {
+            color: @font-swatch6-color-hover;
+            text-decoration: none;
+        }
+    }
+    p,
+    a {
+        font-size: bkscale(@font-swatch5-font-size,0.9);
+        line-height: bkscale(@font-swatch5-line-height,0.9);
+    }
+}
+
+.template-footer__column2.col2 {
+    margin-top: 20px;
+}
+
+.template-footer__column1,
+.template-footer__column2 {
+    @media screen and (min-width: 700px) {
+        overflow: hidden;
+        display: inline-block;
+        width: 50%;
+        height: auto;
+        &.col1 {
+            float: left;
+            padding-right: 20px;
+        }
+        &.col2 {
+            float: right;
+            padding-left: 20px;
+            text-align: right;
+            margin-top: 0;
+        }
+    }
+}
+
+
+
+
+
+// -----------------------------
+// Profile widgets in Footer
+// -----------------------------
+
+// Social Icons
+
+.social-name {
+    width: 0;
+    visibility:hidden;
+    opacity:0;
+    font-size: 0;
+    .transition( all, 0.5s, ease );
+}
+
+// Social icons colour
+.social-link:before {
+    color: @font-swatch6-color;
+    font-size: 16px;
+    .transition( all, 0.5s, ease );
+    @media @tablet {
+        font-size: 18px;
+    }
+}
+
+.social-link:hover {
+    text-decoration: none;
+    &:before {
+        color: @font-swatch6-color-hover;
+        .transition( all, 0.5s, ease );
+    }
+    .social-name {
+        width: auto;
+        visibility: visible;
+        opacity: 1;
+        font-size: 16px;
+        color: @font-swatch6-color-hover;
+        .transition( all, 0.5s, ease );
+    }
+}
+
+
+.template-footer__column2.col2 .social-item:last-child {
+    margin-right: 0;
+    .icon:before {
+        margin-right: 0;
+    }
+}
+
+// Address
+
+.companyaddress p {
+    padding-bottom: 0;
+}
+

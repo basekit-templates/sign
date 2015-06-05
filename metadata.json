@@ -4,7 +4,7 @@
     "thumbnail": "thumbnail.png",
     "screenshot": "thumbnail.png",
     "templateType":"ecommerce",
-    "pageTypes": ["home", "blog", "store"],
+    "pageTypes": ["home", "blog", "store", "menu"],
     "tags": {
     },
     "images": [
@@ -35,9 +35,9 @@
         },
         "font2": {
             "font-family": "\"Arvo\", Georgia, serif",
-            "font-size": "24px",
+            "font-size": "26px",
             "font-weight": "400",
-            "line-height": "34px",
+            "line-height": "36px",
             "color": "@color-swatch4",
             "letter-spacing": "inherit"
         },
@@ -50,7 +50,7 @@
             "letter-spacing": "inherit"
         },
         "font4": {
-            "font-family": "\"Arvo\", Georgia, serif",
+            "font-family": "\"PT Sans\", Tahoma, Geneva, sans-serif",
             "font-size": "18px",
             "font-weight": "400",
             "line-height": "28px",
