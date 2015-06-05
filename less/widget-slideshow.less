@@ -80,6 +80,10 @@
         font-size: @font-swatch8-font-size;
         font-weight: @font-swatch8-font-weight;
         line-height: @font-swatch8-line-height;
+        @media @tablet {
+            font-size: bkscale(@font-swatch8-font-size,0.9);
+            line-height: bkscale(@font-swatch8-line-height,0.9);
+        }
     }
     .image-description {
         font-family: @font-swatch9-font-family;
@@ -87,6 +91,10 @@
         font-size: @font-swatch9-font-size;
         font-weight: @font-swatch9-font-weight;
         line-height: @font-swatch9-line-height;
+        @media @tablet {
+            font-size: bkscale(@font-swatch9-font-size,0.9);
+            line-height: bkscale(@font-swatch9-line-height,0.9);
+        }
     }
 }
 
