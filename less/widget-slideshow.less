@@ -118,6 +118,78 @@
 }
 
 
+// Responsive Columns
+// ------------------
+
+// Two Columns
+.columns-two-left,
+.columns-two-right {
+    .responsiveslideshow .caption {
+        .image-title {
+            font-size: bkscale(@font-swatch8-font-size,0.85);
+            line-height: bkscale(@font-swatch8-line-height,0.85);
+        }
+        .image-description {
+            font-size: bkscale(@font-swatch9-font-size,0.9);
+            line-height: bkscale(@font-swatch9-line-height,0.9);
+        }
+    }
+}
+
+// Three Columns
+.columns-three-left,
+.columns-three-middle,
+.columns-three-right,
+// Four Columns
+.columns-four-first,
+.columns-four-second,
+.columns-four-third,
+.columns-four-fourth {
+    .responsiveslideshow .caption {
+        background-color: darken(@color-swatch1, 5%);
+        .image-title {
+            font-size: bkscale(@font-swatch8-font-size,0.5);
+            line-height: bkscale(@font-swatch8-line-height,0.5);
+        }
+        .image-description {
+            display: none;
+        }
+    }
+}
+
+// Two Columns
+.columns-two-left,
+.columns-two-right,
+// Three Columns
+.columns-three-left,
+.columns-three-middle,
+.columns-three-right,
+// Four Columns
+.columns-four-first,
+.columns-four-second,
+.columns-four-third,
+.columns-four-fourth {
+    // Slideshow set minimum height
+    .responsiveslideshow .slides-list,
+    .responsiveslideshow .figure,
+    .slide-navigation {
+        min-height: 369px;
+        @media only screen and (max-width:1224px) {
+            min-height: 369px;
+        }
+        @media only screen and (max-width:1024px) {
+            min-height: 369px;
+        }
+        @media only screen and (max-width:900px) {
+            min-height: 369px;
+        }
+        @media @tablet {
+            min-height: 369px;
+        }
+    }
+}
+
+
 // Slideshow Navigation
 // --------------------
 
