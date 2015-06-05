@@ -238,17 +238,30 @@ input, textarea, button, .button {
     }
 }
 
-
-.template-footer__column2.col2 .social-item:last-child {
-    margin-right: 0;
-    .icon:before {
-        margin-right: 0;
-    }
-}
-
 // Address
 
 .companyaddress p {
     padding-bottom: 0;
 }
 
+// Style in right column
+
+.template-footer__column2.col2 {
+    // Social icons
+    .social-item:last-child {
+        margin-right: 0;
+        .icon:before {
+            margin-right: 0;
+        }
+    }
+    // Signup Form
+    .signupform .form-body {
+        width: auto;
+    }
+}
+
+// Twitter
+
+.template-footer .twitter a {
+    color: @color-swatch3;
+}
