@@ -128,10 +128,19 @@
         .image-title {
             font-size: bkscale(@font-swatch8-font-size,0.85);
             line-height: bkscale(@font-swatch8-line-height,0.85);
+            @media @mobile {
+                padding: 5px 10px;
+                color: @color-swatch4;
+                font-size: bkscale(@font-swatch8-font-size,0.5);
+                line-height: bkscale(@font-swatch8-line-height,0.5);
+            }
         }
         .image-description {
             font-size: bkscale(@font-swatch9-font-size,0.9);
             line-height: bkscale(@font-swatch9-line-height,0.9);
+            @media @mobile {
+                display: none;
+            }
         }
     }
 }
@@ -146,6 +155,9 @@
 .columns-four-third,
 .columns-four-fourth {
     .responsiveslideshow .caption {
+        bottom: 0;
+        left: 0;
+        width: 100%;
         background-color: darken(@color-swatch1, 5%);
         .image-title {
             padding: 5px 10px;
