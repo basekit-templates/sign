@@ -67,6 +67,7 @@
     @media @mobile {
         bottom: 0;
         left: 0;
+        width: 100%;
     }
     .image-title {
         padding: 10px 25px 5px;
@@ -94,6 +95,9 @@
         @media @tablet {
             font-size: bkscale(@font-swatch9-font-size,0.9);
             line-height: bkscale(@font-swatch9-line-height,0.9);
+        }
+        @media @mobile {
+            display: none;
         }
     }
 }
