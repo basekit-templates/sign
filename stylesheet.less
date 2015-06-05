@@ -267,6 +267,29 @@ input, textarea, button, .button {
 
 
 
+// -----------------------------
+// Blockquote
+// -----------------------------
+
+blockquote {
+    position: relative;
+    padding: 20px 40px;
+    margin: 40px;
+    border: 1px solid darken(@color-swatch1, 10%);
+    .box-shadow;
+    &:before {
+        position: absolute;
+        top: -2px;
+        left: 10px;
+        font-size: 60px;
+        color: @color-swatch7;
+        font-family: geneva, sans-serif;
+    }
+    @media @tablet {
+        margin: 20px 0;
+    }
+}
+
 
 // -----------------------------
 // Profile widgets in Footer
