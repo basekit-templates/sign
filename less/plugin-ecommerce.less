@@ -362,16 +362,20 @@
             -ms-flex-wrap: wrap;
             flex-wrap: wrap;
             width: 100%;
-            box-shadow: none;
-            -webkit-box-shadow: none;
-            -moz-box-shadow: none;
-            -o-box-shadow: none;
             @media @tablet {
                 display: block;
             }
         }
         .form-group {
             border-bottom: 0;
+        }
+        .fieldset--filters {
+            @media only screen and (min-width: 770px) {
+                box-shadow: none;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                -o-box-shadow: none;
+            }
         }
         .fieldset--filters .legend {
             display: block;
