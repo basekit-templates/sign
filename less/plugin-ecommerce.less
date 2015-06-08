@@ -169,27 +169,27 @@
                 padding: 0 25px;
             }
         }
-        .button--clear,
-        .message--empty {
+    }
+    .button--clear,
+    .message--empty {
+        color: #FF0000;
+    }
+    .message {
+        padding-left: 0;
+        text-align: left;
+    }
+    .message--empty {
+        &:before {
+            display: none;
+        }
+        p {
+            position: relative;
             color: #FF0000;
         }
-        .message {
-            padding-left: 0;
-            text-align: left;
-        }
-        .message--empty {
-            &:before {
-                display: none;
-            }
-            p {
-                position: relative;
-                color: #FF0000;
-            }
-            p:before {
-                content: "\f040";
-                font-family: 'FontAwesome', sans-serif;
-                padding-right: 10px;
-            }
+        p:before {
+            content: "\f040";
+            font-family: 'FontAwesome', sans-serif;
+            padding-right: 10px;
         }
     }
 }
