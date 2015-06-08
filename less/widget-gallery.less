@@ -131,7 +131,14 @@
 .columns-four-second,
 .columns-four-third,
 .columns-four-fourth {
-    .image-description {
+    .gallery figcaption .image-title {
+        font-size: bkscale(@font-swatch4-font-size,0.8);
+        line-height: bkscale(@font-swatch4-line-height,0.8);
+    }
+    .gallery figcaption .image-description {
         display: none;
+    }
+    .gallery .caption {
+        padding: 10px;
     }
 }
