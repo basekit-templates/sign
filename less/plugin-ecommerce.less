@@ -150,8 +150,23 @@
 
 // Hide products search
 .ecomproductslist .fieldset--search {
-    display: none;
+    border: 2px solid @color-swatch1;
+    .legend,
+    .form-body .form-group:first-child,
+    .form-body .form-group:nth-child(2) {
+        display: none;
+    }
+    .form-body .form-group:last-child {
+        margin: 0;
+        width: 100%;
+        .button--clear {
+            width: 100%;
+            padding: 10px 25px 8px;
+            margin-bottom: 20px;
+        }
+    }
 }
+
 
 // Filters
 .ecomproductslist .fieldset--filters {
