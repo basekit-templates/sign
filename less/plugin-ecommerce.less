@@ -144,7 +144,7 @@
     }
 }
 
-// Hide products search
+// Hide products search & show 'clear search' button
 .ecomproductslist .fieldset--search {
     .legend,
     .form-body .form-group:first-child,
@@ -154,14 +154,26 @@
     .form-body .form-group:last-child {
         margin: 0;
         width: 100%;
+        @media @tablet {
+            margin-right: 10px;
+        }
         .button--clear {
             width: 100%;
-            padding: 10px 25px 8px;
+            padding: 10px 10px 8px;
             margin-bottom: 20px;
+            text-align: center;
+            @media @tablet {
+                height: 44px;
+                line-height: 44px;
+                margin-bottom: 20px;
+                padding: 0 25px;
+                color: @color-swatch1;
+                background-color: @color-swatch4;
+                border: none;
+            }
         }
     }
 }
-
 
 // Filters
 .ecomproductslist .fieldset--filters {
