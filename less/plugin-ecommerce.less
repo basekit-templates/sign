@@ -167,9 +167,28 @@
                 line-height: 44px;
                 margin-bottom: 20px;
                 padding: 0 25px;
-                color: @color-swatch1;
-                background-color: @color-swatch4;
-                border: none;
+            }
+        }
+        .button--clear,
+        .message--empty {
+            color: #FF0000;
+        }
+        .message {
+            padding-left: 0;
+            text-align: left;
+        }
+        .message--empty {
+            &:before {
+                display: none;
+            }
+            p {
+                position: relative;
+                color: #FF0000;
+            }
+            p:before {
+                content: "\f040";
+                font-family: 'FontAwesome', sans-serif;
+                padding-right: 10px;
             }
         }
     }
