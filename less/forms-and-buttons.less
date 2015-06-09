@@ -88,30 +88,36 @@ textarea,
 // Select field in forms
 // ----------------------------
 
-.ecomproductslist {
-    .select {
-        appearance: none;
-        -moz-appearance: none; /* Firefox */
-        -webkit-appearance: none; /* Safari */
-        -webkit-border-radius: 0;
-        padding: 0 8px;
+.select {
+    appearance: none;
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari */
+    -webkit-border-radius: 0;
+    padding: 0 8px;
+}
+.select-wrap {
+    position: relative;
+    height: 20px;
+    line-height: 20px;
+    @media @tablet {
+        height: 44px;
+        line-height: 44px;
     }
-    .select-wrap {
-        position: relative;
+    &:after {
+        position: absolute;
+        top: 0;
+        right: 8px;
         height: 20px;
         line-height: 20px;
-        &:after {
-            position: absolute;
-            top: 0;
-            right: 8px;
-            height: 20px;
-            line-height: 20px;
-            content: "\F078";
-            font-family: 'FontAwesome', sans-serif;
-            font-size: 14px;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+        content: "\F078";
+        font-family: 'FontAwesome', sans-serif;
+        font-size: 14px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        @media @tablet {
+            height: 44px;
+            line-height: 44px;
         }
     }
 }
