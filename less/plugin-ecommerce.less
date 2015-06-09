@@ -408,6 +408,14 @@
         }
         .form-group {
             border-bottom: 0;
+            .select-wrap {
+                height: 44px;
+                line-height: 44px;
+                &:after {
+                    height: 44px;
+                    line-height: 44px;
+                }
+            }
         }
         .fieldset--filters {
             @media only screen and (min-width: 770px) {
@@ -416,6 +424,9 @@
                 -moz-box-shadow: none;
                 -o-box-shadow: none;
             }
+        }
+        .fieldset--filters .label {
+            padding: 0;
         }
         .fieldset--filters .legend {
             display: block;
