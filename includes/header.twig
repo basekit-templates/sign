@@ -26,9 +26,7 @@
     <div class="header__second-row flex-container">
 
         <div class="flex-item flex-page-title">
-            <h2>
-                <span>Page Title</span>
-            </h2>
+            {{widget('pagetitle', 'title', {})|raw}}
         </div>
 
         {% if plugins.ecommerce.store.live %}
