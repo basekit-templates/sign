@@ -177,20 +177,21 @@
     }
 }
 .ecomproductslist { // No products found message
-    .message--empty {
+    .message {
         color: #E76A6A;
     }
     .message {
         padding-left: 0;
         text-align: left;
     }
-    .message--empty {
+    .message {
         &:before {
             display: none;
         }
         p {
             position: relative;
             color: #E76A6A;
+            padding-left: 25px;
         }
         p:before {
             content: "\f040";
