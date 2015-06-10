@@ -89,11 +89,15 @@ textarea,
 // ----------------------------
 
 .select {
-    appearance: none;
-    -moz-appearance: none; /* Firefox */
-    -webkit-appearance: none; /* Safari */
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -o-appearance:none;
+    appearance:none;
     -webkit-border-radius: 0;
     padding: 0 8px;
+}
+select::-ms-expand{
+  display:none;
 }
 .select-wrap {
     position: relative;
