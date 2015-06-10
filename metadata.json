@@ -33,6 +33,24 @@
             "color5":"#8a9191",
             "color6":"#afb6b6",
             "color7":"#dddddd"
+        },
+        "Swatch 2": {
+            "color1":"#f1f1f1",
+            "color2":"#f57878",
+            "color3":"#f57878",
+            "color4":"#505050",
+            "color5":"#8a9191",
+            "color6":"#afb6b6",
+            "color7":"#dddddd"
+        },
+        "Swatch 3": {
+            "color1":"#ffffff",
+            "color2":"#4788c0",
+            "color3":"#485662",
+            "color4":"#485662",
+            "color5":"#8c939b",
+            "color6":"#a8afb7",
+            "color7":"#dddddd"
         }
     },
     "fontSwatch": {
