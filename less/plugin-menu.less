@@ -209,6 +209,21 @@
     }
     // Subsection
     .menu-section--subsection {
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        @media @tablet {
+            padding: 0;
+        }
+        @media @mobile {
+            padding: 0;
+        }
+    }
+    // Featured Subsection
+    .menu-section--featured {
         padding: 30px;
         margin-bottom: 20px;
         background-color: darken(@color-swatch1, 8%);
