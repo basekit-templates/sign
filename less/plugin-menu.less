@@ -207,6 +207,32 @@
     .menu-item--featured .item-image .image {
         padding: 0;
     }
+    // Images
+    .menu-item--featured .item-image .image-link {
+        height: 213px;
+        line-height: 213px;
+    }
+    .menu-section--featured .menu-item--featured .item-image .image-link,
+    .item-image .image-link {
+        height: 240px;
+        line-height: 240px;
+        @media only screen and (max-width: 1140px) {
+            height: 175px;
+            line-height: 175px;
+        }
+        @media only screen and (max-width: 1024px) {
+            height: 171px;
+            line-height: 171px;
+        }
+        @media only screen and (max-width: 960px) {
+            height: 157px;
+            line-height: 157px;
+        }
+        @media only screen and (max-width: 900px) {
+            height: 200px;
+            line-height: 200px;
+        }
+    }
     // Subsection
     .menu-section--subsection {
         padding: 0;
@@ -243,6 +269,9 @@
         .section-header {
             margin-bottom: 10px;
             padding-bottom: 20px;
+        }
+        .menu-item--featured {
+            padding: 0;
         }
     }
 }
