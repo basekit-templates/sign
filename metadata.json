@@ -2,7 +2,7 @@
     "name": "Sign",
     "widgetVersion":2,
     "thumbnail": "thumbnail.png",
-    "screenshot": "thumbnail.png",
+    "screenshot": "sign-screenshot.jpg",
     "templateType":"ecommerce",
     "pageTypes": ["home", "blog", "store", "menu"],
     "tags": {
