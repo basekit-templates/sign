@@ -31,54 +31,47 @@
 // ----------------------------------
 
 .ecomproduct {
-    .product-article {
-        .flex;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    }
     .product-images,
     .product-content {
-        -webkit-flex: 0 0 48%;
-        -ms-flex: 0 0 48%;
-        flex: 0 0 48%;
-        -webkit-align-self: stretch;
-        -ms-flex-item-align: stretch;
-        align-self: stretch;
+        display: inline-block;
+        width: 48%;
     }
     .product-images {
         margin-right: 4%;
+        float: left;
     }
     .no-image .image {
         width: 100%;
+    }
+    .product-gallery {
+        margin: 20px 0 0;
+        .gallery-item {
+            margin-bottom: 10px;
+        }
     }
     .product-title {
         padding: 0;
         font-size: bkscale(@font-swatch1-font-size,0.8);
         line-height: bkscale(@font-swatch1-line-height,0.9);
+        @media only screen and (max-width: 700px) {
+            margin-top: 20px;
+        }
     }
     .product-price {
         color: @color-swatch5;
     }
     @media only screen and (max-width: 850px) {
         .product-images {
-            -webkit-flex: 0 0 40%;
-            -ms-flex: 0 0 40%;
-            flex: 0 0 40%;
+            width: 40%;
         }
         .product-content {
-            -webkit-flex: 0 0 56%;
-            -ms-flex: 0 0 56%;
-            flex: 0 0 56%;
+            width: 56%;
         }
     }
-
     @media only screen and (max-width: 700px) {
         .product-images,
         .product-content {
-            -webkit-flex: 0 0 100%;
-            -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
+            width: 100%;
             margin-right: 0;
         }
     }
@@ -90,6 +83,9 @@
         &:hover {
             text-decoration: none;
         }
+    }
+    button.icon--add.added {
+        color: #ffffff;
     }
     .form-body {
         background-color: #f2f2f2;
@@ -233,6 +229,10 @@
             border-bottom: 1px solid darken(@color-swatch1, 10%);
             margin-right: 0;
         }
+        @media @mobile {
+            padding: 0;
+            margin: 0 0 5px;
+        }
     }
     .label {
         margin: 0;
@@ -293,7 +293,7 @@
 .product-item {
     position: relative;
     width: 32%;
-    margin-bottom: 2%;
+    margin-bottom: 20px;
     // Display 100% at mobile
     @media @mobile {
         width: 100%;
@@ -729,7 +729,7 @@
 
 // View Basket Button
 
-.view-basket {
+.view-basket.button {
     margin: 20px 0;
     padding: 10px 25px 8px;
 }

@@ -113,9 +113,6 @@ header {
     -webkit-flex: 0 1 auto;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
-    -webkit-align-self: flex-start;
-    -ms-flex-item-align: start;
-    align-self: flex-start;
 }
 
 // Navigation widget
@@ -187,6 +184,7 @@ header {
 }
 
 .flex-shopbasket {
+    min-height: 44px;
     .ecombasket .view-basket.button:hover {
         color: @color-swatch1;
     }
@@ -235,6 +233,14 @@ header {
 
 .navigation-item.selected > .item-name {
     color: @font-swatch6-color-hover;
+}
+
+// Navigation on Tablet
+
+.extendednavigation .navigation-list {
+    @media @tablet {
+        margin-top: 3px;
+    }
 }
 
 // Hide toggle on desktop
@@ -296,7 +302,7 @@ header {
 // Toggle Button Open State
 .open & {
     &.navigation-toggle {
-        background-color: @color-swatch4;
+        background-color: transparent;
         &:before {
             width: 26px;
             margin-top: 21px;

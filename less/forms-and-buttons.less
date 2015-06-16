@@ -9,6 +9,7 @@ button,
     padding: 8px 25px;
     border: 2px solid @color-swatch7;
     color: @font-swatch7-color;
+    background-color: @font-swatch7-background-color;
     .transition( all, 0.5s, ease );
     &:hover {
         color: @font-swatch7-color;
@@ -226,10 +227,19 @@ select::-ms-expand{
 // ------------------------------------------------
 
 .signupform, // Signup
+.blogsearch { // Blog Search
+    .button {
+        margin-left: -2px;
+        @media @mobile {
+            margin-left: 0;
+        }
+    }
+}
+
+.signupform, // Signup
 .blogsearch, // Blog Search
 .contactform  { // Contact Form
     .button {
-        margin-left: -2px;
         @media @mobile {
             margin-left: 0;
             background-color: @color-swatch4;
