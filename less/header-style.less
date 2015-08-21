@@ -358,7 +358,7 @@ header {
         width: 100%;
         &.open {
             display: block;
-            border-bottom: 1px solid darken(@color-swatch1, 10%);
+            border-bottom: 1px solid @color-swatch7;
         }
     }
 }
@@ -374,14 +374,14 @@ header {
     left: inherit;
     right: 0;
     white-space: normal;
-    border: 1px solid darken(@color-swatch1, 10%);
+    border: 1px solid @color-swatch7;
     @media @tablet {
         border-right: none;
         border-left: none;
     }
     .navigation-item--child {
         @media only screen and (min-width:770px) {
-            border-bottom: 1px solid darken(@color-swatch1, 5%);
+            border-bottom: 1px solid @color-swatch7;
             &:last-child {
                 border-bottom: none;
             }
