@@ -1,16 +1,6 @@
 <!doctype html>
-<!--[if lt IE 7]>
-    <html class="no-js ie6 oldie" lang="en">
-<![endif]-->
-<!--[if IE 7]>
-    <html class="no-js ie7 oldie" lang="en">
-<![endif]-->
-<!--[if IE 8]>
-    <html class="no-js ie8 oldie" lang="en">
-<![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js" lang="{{ page.seoLang }}">
-<!--<![endif]-->
+
 <head>
     <meta charset="utf-8" />
     <title>{{ page.title }}</title>
@@ -53,7 +43,7 @@
      <!-- Nav Menu Script -->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-           <script>window.jQuery || document.write('<script src="{{ asset('libs/jquery-1.10.2.min.js')}}"><\/script>')
+           <script>window.jQuery || document.write('<script src="{{ asset('libs/jquery-1.10.2.min.js')}}"><\/script>');
         </script>
 
         <script>
@@ -73,14 +63,14 @@
 
         <!-- Masonry -->
 
-            <!-- imagesLoaded -->
+        <!-- imagesLoaded -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
 
         <!-- Masonry -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.2.1/masonry.pkgd.min.js"></script>
 
         <script>
-            var container = document.querySelector('.gallery-list');
+            var container = document.querySelector('#page-zones__main > [data-name="gallery"] .gallery-list');
 
             imagesLoaded( container, function() {
                 var msnry = new Masonry( container, {
