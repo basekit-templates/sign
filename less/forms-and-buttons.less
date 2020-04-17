@@ -71,6 +71,16 @@ button,
     }
 }
 
+.signupform .button {
+    @media only screen and (min-width:480px) {
+        font-size: 16px;
+        line-height: 26px;
+        height: 44px;
+    }
+}
+
+
+
 // ----------------------------
 // FORMS
 // ----------------------------
@@ -112,12 +122,7 @@ select::-ms-expand{
 }
 .select-wrap {
     position: relative;
-    height: 20px;
-    line-height: 20px;
-    @media @tablet {
-        height: 44px;
-        line-height: 44px;
-    }
+
     &:after {
         position: absolute;
         top: 0;
@@ -131,10 +136,7 @@ select::-ms-expand{
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         pointer-events: none;
-        @media @tablet {
-            height: 44px;
-            line-height: 44px;
-        }
+        z-index: 1;
     }
 }
 
@@ -147,23 +149,6 @@ select::-ms-expand{
     }
 }
 
-
-// Advanced Contact Widget styles
-.form-group  {
-    input[type="radio"],
-    input[type="checkbox"] {
-        width: inherit;
-        height: inherit;
-    }
-}
-
-.advancedcontactform .select-wrap {
-    height: auto;
-
-    &:after {
-        top: 10px;
-    }
-}
 
 
 
@@ -188,10 +173,12 @@ select::-ms-expand{
 
 // Signup
 .signupform,
-.blogsearch {
+.blogsearch,
+.widget__profile {
     .legend {
         white-space: nowrap;
     }
+    .signupform__label,
     .label {
         display: none;
     }
@@ -266,7 +253,8 @@ select::-ms-expand{
 
 .signupform, // Signup
 .blogsearch, // Blog Search
-.contactform  { // Contact Form
+.contactform,
+.advancedcontactform { // Contact Form
     .button {
         @media @mobile {
             margin-left: 0;
@@ -294,6 +282,7 @@ select::-ms-expand{
             height: auto;
             padding: 5px 12px;
             font-size: 0;
+            line-height: 0;
             text-indent: -100px;
             overflow: hidden;
             cursor: pointer;
@@ -382,8 +371,9 @@ select::-ms-expand{
 .columns-three-middle,
 .columns-three-right {
     .signupform .form-body, // Signup
-    .blogsearch .form-body,
-    .contactform { // Blog
+    .blogsearch .form-body, // Blog
+    .contactform,
+    .advancedcontactform {
         @media @tablet {
             display: block;
             width: 100%;
@@ -414,8 +404,9 @@ select::-ms-expand{
 .columns-four-third,
 .columns-four-fourth {
     .signupform .form-body, // Signup
-    .blogsearch .form-body,
-    .contactform { // Blog
+    .blogsearch .form-body, // Blog
+    .contactform,
+    .advancedcontactform {
         display: block;
         width: 100%;
         .input {
@@ -495,3 +486,60 @@ select::-ms-expand{
     }
 }
 
+
+
+
+// -------------------------------------
+// Advanced contact form
+// -------------------------------------
+
+.advancedcontactform ul.option-list {
+    margin-left: 1px;
+}
+
+.option-item--radio,
+.option-item--checkbox {
+    .flex-display;
+    .justify-content(flex-start);
+    .align-items(center); 
+      @media @mobile {
+        margin-bottom: 20px;
+      }
+}
+
+input[type="radio"] {
+    -webkit-appearance: radio !important;
+    box-sizing: border-box;   
+}
+
+.form-group input[type="checkbox"] {
+    -webkit-appearance: checkbox;
+}
+
+.form-group input[type="radio"],
+.form-group input[type="checkbox"] {
+  width: 15px !important;
+  height: 15px;
+  min-height: inherit;
+  margin-right: 5px;
+  border: 1px solid #000 !important;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  box-sizing: border-box;
+}
+
+.label--radio,
+.label--checkbox {
+    margin-bottom: 0;
+}
+
+.advancedcontactform .select-wrap {
+    display: inline-block;
+    width: 100%;
+
+    &:after {
+        top: 12px;
+    }
+}
